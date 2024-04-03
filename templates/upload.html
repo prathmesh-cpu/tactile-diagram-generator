@@ -1,0 +1,69 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/cd1b3c60ee.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="{% static 'bulb.webp' %}" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <title>Tools | Insight</title>
+</head>
+
+<body>
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~ NAVIGATION BAR ~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <nav class="navbar">
+        <div class="logo"><a href="{% url 'index' %}">INSIGHT</a></div>
+        <ul>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li class="dropdown">
+                <a class="active">Tools</a>
+                <div class="dropdown-content">
+                    <a href="{% url 'textBraille' %}" class="active">Text to Braille</a>
+                    <a href="{% url 'upload' %}">2D Image to Tactile</a>
+                </div>
+            </li>
+        </ul>
+        <div></div>
+        <div class="toggle_btn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </nav>
+
+    <a href="#top">
+        <div class="top-arrow">
+            <i class="fa-solid fa-arrow-up"></i>
+        </div>
+    </a>
+
+    <section class="hero-about hero-about1" id="hero-about-last">
+        <h2>2D image to Tactile Diagram Converter</h2>
+        <p>Convert your 2d image into Tactile Diagram with incredible accuracy.</p>
+        <div>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="file" name="image" class="select-btn">
+                <br>
+                <label for="mx_thick">Max Thickness (MM): </label>
+                <input type="number" step="0.05" id="mx_thick" name="mx_thick" value="3">
+                <label for="mn_thick">Min Thickness (MM): </label>
+                <input type="number" step="0.05" id="mn_thick" name="mn_thick" value="0.5">
+                <label for="wd">Width (MM): </label>
+                <input type="number" step="0.05" id="wd" name="wd" value="200">
+                <label for="px_mm">Pixel Per MM: </label>
+                <input type="number" step="0.05" id="px_mm" name="px_mm" value="4">
+                <input type="submit" value="Generate" class="submit-btn" id="generate">
+            </form>
+            {% if check%}
+            <p>STL File: <a href="{{ stl_file_url }}" download>Download</a></p>
+            <div id="stl-container" data-stl-url="{{ stl_file_url }}"></div>
+            {% endif %}
+        </div>
+    </section>
+
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/cd1b3c60ee.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="{% static 'bulb.webp' %}" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <title>Tools | Insight</title>
+</head>
+
+<body>
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~ NAVIGATION BAR ~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <nav class="navbar">
+        <div class="logo"><a href="{% url 'index' %}">INSIGHT</a></div>
+        <ul>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li class="dropdown">
+                <a class="active">Tools</a>
+                <div class="dropdown-content">
+                    <a href="{% url 'textBraille' %}" class="active">Text to Braille</a>
+                    <a href="{% url 'upload' %}">2D Image to Tactile</a>
+                </div>
+            </li>
+        </ul>
+        <div></div>
+        <div class="toggle_btn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </nav>
+
+    <a href="#top">
+        <div class="top-arrow">
+            <i class="fa-solid fa-arrow-up"></i>
+        </div>
+    </a>
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~ HERO SECTION ~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <section class="hero-about">
+        <h2>Text to Braille Converter</h2>
+        <p>Convert your Text document into Braille format with incredible accuracy.</p>
+        <div>
+            <input type="file" id="fileInput">
+            <button class="select-btn" onclick="selectTextFile()">Select Text File</button>
+            <p>or Type your Text here</p>
+            <textarea id="textInput"></textarea>
+            <div id="brailleOutput"></div>
+            <div>
+                <button onclick="convertToBraille()">Convert to Braille</button>
+                <button onclick="downloadAsImage()">Download as Image</button>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
+    <script src="{% static 'script.js' %}"></script>
+</body>
+
+</html>

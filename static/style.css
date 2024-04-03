@@ -1,0 +1,534 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Montserrat:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/* Scrollbar width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Scrollbar Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Scrollbar Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Scrollbar Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* ------------------------------------------------------------------ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~| HOME PAGE |~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ------------------------------------------------------------------ */
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~ NAVBAR ~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 4.4rem;
+    padding: 0 2.5rem;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 9;
+    position: fixed;
+    top: 0;
+    background-color: #ffffff;
+}
+
+a {
+    text-decoration: none;
+}
+
+.navbar .logo a {
+    font-family: 'Montserrat';
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    color: #4E9FFE;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 3rem;
+}
+
+.navbar ul li a {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.01em;
+    color: #121213;
+    cursor: pointer;
+}
+
+.navbar ul li a:hover {
+    border-bottom: 2px solid #0077ff88;
+}
+
+.navbar ul li a.active {
+    color: #121213;
+    border-bottom: 2px solid #0077ffd7;
+}
+
+.navbar .signup_btn {
+    border: 2px solid #4E9FFE;
+    padding: 7px 12px;
+    border-radius: 1rem;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.01em;
+    color: #000000;
+}
+
+.navbar .toggle_btn {
+    display: none;
+}
+
+/* Add styles for dropdown */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content a:hover {
+    border-bottom: none;
+    background-color: #a0ccff;
+}
+
+.dropdown:hover .dropdown-content a.active {
+    border-bottom: none;
+    background-color: #4398fa;
+    color: #ffffff;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~ NAVIGATION - ARROW UP ~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.top-arrow {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    font-size: 20px;
+    bottom: 10px;
+    right: 25px;
+    padding: 10px;
+    border-radius: 100%;
+    background-color: #0075FF;
+}
+
+.top-arrow:hover {
+    background-color: #0065d8;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~ HERO SECTION ~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.hero {
+    width: 100%;
+    height: 90vh;
+    padding: 0 2.5rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 4.4rem;
+}
+
+.hero .hero-txt {
+    height: 80%;
+    padding: 2rem 0;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.hero .hero-txt h1 {
+    font-family: 'Merriweather';
+    font-weight: 900;
+    font-size: 3.2rem;
+    line-height: 4.5rem;
+    letter-spacing: 0.015em;
+    color: #121213;
+}
+
+.hero .hero-txt h1 span {
+    color: #0075FF;
+}
+
+.hero .hero-txt p {
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+    color: #121213;
+}
+
+.hero .hero-txt div {
+    display: flex;
+    gap: 3rem;
+}
+
+.hero .hero-txt div .cta-btn {
+    border: 2px solid #0075FF;
+    color: #0075FF;
+    padding: 10px 12px;
+    border-radius: 0.6rem;
+    font-family: 'Montserrat';
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.hero .hero-txt div .cta-btn:first-child {
+    background-color: #0075FF;
+    color: #ffffff;
+}
+
+.hero .hero-img {
+    height: 80%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero .hero-img img {
+    width: 80%;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~ ABOUT SECTION ~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.about {
+    width: 100%;
+    height: 90vh;
+    padding: 0 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.about>h2 {
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-size: 2rem;
+    letter-spacing: 0.01em;
+    color: #0075FF;
+    text-align: center;
+}
+
+.about>div {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.about>div>div {
+    font-family: 'Roboto';
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 2rem;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.about>div>div h2 {
+    display: flex;
+    height: 8rem;
+    width: 8rem;
+    align-items: center;
+    background-color: #a2cdff;
+    color: #000000;
+}
+
+.about>div>div h2#vision {
+    border-top-right-radius: 100%;
+    padding-left: 1rem;
+}
+
+.about>div>div h2#mission {
+    border-top-left-radius: 100%;
+    justify-content: end;
+    padding-right: 1rem;
+}
+
+.about>div>div h2#values {
+    border-top-right-radius: 100%;
+    padding-left: 1rem;
+}
+
+.about>div>div p {
+    padding: 0.5rem;
+    background-color: rgba(18, 18, 19, 0.05);
+    margin-left: 110px;
+    margin-right: 56px;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~ FOOTER SECTION ~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+footer .contact-container {
+    width: 100%;
+    height: 42vh;
+    background-color: #000000;
+    padding: 2rem 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    font-family: 'Montserrat';
+}
+
+footer .contact-container>div {
+    width: 90%;
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .contact-container>div>div {
+    width: 30%;
+    height: 100%;
+    color: #ffffff;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+footer .contact-container>div .quick-links {
+    width: 20%;
+}
+
+footer .contact-container>div .quick-links a:hover {
+    transition: 0.5s;
+    color: #0075FF;
+}
+
+footer .contact-container>.nav-links {
+    height: 90%;
+}
+
+footer .contact-container>.nav-links .contact-info i {
+    color: #0075FF;
+}
+
+footer .contact-container>.nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 300;
+}
+
+footer .contact-container>.nav-links h2 {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 400;
+    font-size: 1.7rem;
+}
+
+footer .contact-container>.nav-links>div p {
+    text-decoration: none;
+    font-weight: 300;
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+}
+
+footer .contact-container>.copyright {
+    display: flex;
+    justify-content: center;
+    padding-top: 1rem;
+    border-top: 1px solid #ffffff2d;
+    color: #ffffff;
+    font-family: 'Montserrat';
+    font-size: 0.9rem;
+}
+
+footer .contact-container>.copyright span {
+    color: #0075FF;
+    font-weight: 700;
+}
+
+footer .contact-container>.copyright i {
+    color: #ff0000;
+    animation: beat 0.3s ease-in-out 0s infinite alternate;
+}
+
+/* ------------------------------------------------------------------ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~| ABOUT PAGE |~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ------------------------------------------------------------------ */
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~ HERO SECTION ~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+hr {
+    border-style: none;
+    border-top-style: dotted;
+    border-color: #D9D9D9;
+    border-width: 5px;
+    width: 15%;
+    margin: 1rem auto;
+}
+
+.hero-about {
+    width: 100%;
+    height: 90vh;
+    padding: 0 2.5rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 4.4rem;
+}
+
+.hero-about>h2 {
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-size: 2rem;
+    letter-spacing: 0.01em;
+    color: #0075FF;
+    text-align: center;
+}
+
+.hero-about>p {
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-size: 1.1rem;
+    letter-spacing: 0.01em;
+    text-align: center;
+}
+
+.hero-about>div {
+    width: 60%;
+    height: 30rem;
+    border-radius: 2rem;
+    background-color: #D9D9D9;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.01em;
+    color: #000000;
+
+}
+
+.hero-about #fileInput {
+    display: none;
+
+}
+
+.hero-about>div form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-about>div .select-btn {
+    padding: 7px;
+    border-radius: 0.6rem;
+    border: 2px solid #551A95;
+    background-color: #551A95;
+    color: #ffffff;
+    cursor: pointer;
+    display: flex;
+}
+
+.hero-about>div .submit-btn {
+    padding: 10px 12px;
+    border-radius: 0.6rem;
+    border: 2px solid #551A95;
+    color: #551A95;
+    background-color: #ffffff;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.01em;
+    cursor: pointer;
+}
+
+.hero-about>div textarea {
+    width: 60%;
+    height: 10rem;
+    border-radius: 2rem;
+    padding: 1rem;
+    background-color: #ffffff;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.01em;
+    outline: none;
+    resize: none;
+}
+
+.hero-about>div button {
+    padding: 10px 12px;
+    border-radius: 0.6rem;
+    border: 2px solid #551A95;
+    color: #551A95;
+    background-color: #ffffff;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.01em;
+    cursor: pointer;
+}
+
+.hero-about>div button:first-child {
+    padding: 10px 12px;
+    border-radius: 0.6rem;
+    border: 2px solid #551A95;
+    background-color: #551A95;
+    color: #ffffff;
+}
+
+.hero-about form label {
+    padding: 0.5rem;
+    outline: none;
+    width: 70%;
+    font-size: 1.1rem;
+  }
+
+.hero-about form input {
+    padding: 0.5rem;
+    outline: none;
+    width: 70%;
+    font-size: 1.1rem;
+    border-radius: 0.6rem;
+    border: 1px solid #551A95;
+  }
+
+.hero-about form #generate {
+    margin-top: 1rem;
+  }

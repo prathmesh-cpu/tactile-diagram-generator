@@ -1,0 +1,130 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/cd1b3c60ee.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="{% static 'bulb.webp' %}" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <title>Insight | Pioneering New Paths in Visually Impaired Education</title>
+</head>
+
+<body>
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~ NAVIGATION BAR ~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <nav class="navbar">
+        <div class="logo"><a href="{% url 'index' %}">INSIGHT</a></div>
+        <ul>
+            <li><a href="{% url 'index' %}" class="active">Home</a></li>
+            <li class="dropdown">
+                <a>Tools</a>
+                <div class="dropdown-content">
+                    <a href="{% url 'textBraille' %}" class="active">Text to Braille</a>
+                    <a href="{% url 'upload' %}">2D Image to Tactile</a>
+                </div>
+            </li>
+        </ul>
+        <a class="signup_btn" href="#footer">Contact Us</a>
+        <div class="toggle_btn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </nav>
+
+    <a href="#top">
+        <div class="top-arrow">
+            <i class="fa-solid fa-arrow-up"></i>
+        </div>
+    </a>
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~ HERO SECTION ~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <section class="hero">
+        <div class="hero-txt">
+            <h1>Pioneering New Paths<br>in <span>Visually Impaired</span><br>Education</h1>
+            <p>Empowering visually impaired students and make education accessible for them.</p>
+            <div>
+                <a href="{% url 'textBraille' %}" class="cta-btn">Text to Braille</a>
+                <a href="{% url 'upload' %}" class="cta-btn">2D Image to Tactile</a>
+                {% comment %} <a class="cta-btn" href="2DtoTactile">2D to Tactile</a>
+                <a class="cta-btn" href="textBraille">Text to Braille</a> {% endcomment %}
+            </div>
+        </div>
+        <div class="hero-img">
+            <img src="{% static 'Group 1.png' %}" alt="">
+        </div>
+    </section>
+    <hr id="about">
+    <section class="about">
+        <h2>"Education for all, regardless of vision."</h2>
+        <div>
+            <div>
+                <div>
+                    <h2 id="vision">Vision</h2>
+                </div>
+                <div>
+                    <p>To create a world where visually impaired students have the same opportunities to learn as their
+                        sighted peers.</p>
+                </div>
+            </div>
+            <div class="middle">
+                <div>
+
+                    <p>To empower visually impaired students by providing them with access to quality education and
+                        resources</p>
+                </div>
+                <div>
+                    <h2 id="mission">Mission</h2>
+                </div>
+            </div>
+            <div class="last">
+                <div>
+                    <h2 id="values">Values</h2>
+                </div>
+                <div class="last-txt">
+                    <p><strong>Accessibility:</strong> We believe that all students, regardless of vision, should have
+                        access to quality education.</p>
+                    <p><strong>Innovation:</strong> We are committed to using innovative technologies to make education
+                        more accessible
+                        for visually impaired students.</p>
+                    <p><strong>Collaboration:</strong> We believe that by working together, we can create a more
+                        inclusive and
+                        accessible world for all students.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="contact-container" id="footer">
+            <div class="nav-links">
+                <div>
+                    <h2>INSIGHT</h2>
+                    <p>Thank you for visiting our website. Connect with us over socials.</p>
+                    <p>Keep Learning📚. Connect with us over live chat!</p>
+                </div>
+                <div class="quick-links">
+                    <h2>Quick Links</h2>
+                    <a href="#top" id="active"><i class="fas fa-chevron-circle-right"></i> &nbsp;Home</a>
+                    <a href="#about"><i class="fas fa-chevron-circle-right"></i> &nbsp;About</a>
+                    <a href="{% url 'textBraille' %}"><i class="fas fa-chevron-circle-right"></i> &nbsp;Text to Braille</a>
+                    <a href="{% url 'upload' %}"><i class="fas fa-chevron-circle-right"></i> &nbsp;2D Image to Tactile</a>
+                </div>
+                <div class="contact-info">
+                    <h2>Contact Info</h2>
+                    <p><a href="mailto:@gmail.com" id="active"><i
+                                class="fa-solid fa-envelope"></i>&nbsp; teaminsight@gmail.com</a></p>
+                    <p><a href="https://www.google.com/maps/@18.6237666,73.7519826,13.75z" id="active"
+                            target="_blank"><i class="fa-solid fa-map-location-dot"></i>&nbsp; Pune, India - 411033</a>
+                    </p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>Designed With <i class="fa-solid fa-heart"></i> By <span>Team INSIGHT</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'script.js' %}"></script>
+</body>
+
+</html>
